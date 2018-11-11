@@ -23,6 +23,12 @@ UI.prototype.addBookList = function(book) {
   list.appendChild(row);
 };
 
+UI.prototype.clearFields = function() {
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("isbn").value = "";
+};
+
 document.getElementById("book-form").addEventListener("submit", function(e) {
   e.preventDefault();
   // Get title, author, isbn from form
@@ -36,4 +42,5 @@ document.getElementById("book-form").addEventListener("submit", function(e) {
   // Instantiate the UI constructor
   const ui = new UI();
   ui.addBookList(book);
+  ui.clearFields();
 });
